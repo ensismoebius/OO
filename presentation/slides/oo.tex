@@ -1,0 +1,89 @@
+\begin{frame}
+	\frametitle{Visão Geral}
+	\begin{itemize}
+		\item Introdução à Orientação a Objetos
+		\item Classes e Objetos
+		\item Encapsulamento
+		\item Herança
+		\item Polimorfismo
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{Classes e Objetos}
+	
+	\par Uma \textbf{classe} é um modelo para criar objetos que define atributos e métodos. Uma classe também pode ser definida como uma especificação de alguma coisa.
+	
+	\par Um \textbf{atributo} é uma \textbf{característica} cujo valor pode variar de objeto para objeto.
+	
+	\par Um \textbf{método} é uma \textbf{ação} que \textbf{pode ou não} variar de objeto para objeto dependendo se tais métodos levam ou não em consideração os valores dos atributos.
+	
+	\par Já o \textbf{objeto} é aquilo que existe \textbf{real ou virtualmente} segundo a especificação da classe.
+
+	\par \textbf{Exemplos}:
+	\par O projeto de uma casa pode ser considerado uma classe já que especifica todas as coisas que a casa fará e todas as propriedades (materiais, isolamento, pisos, etc.) que a casa terá e que, caso desejem, as pessoas que morarão nessa casa poderão ou não modificar. Já o objeto é casa depois de construída de acordo com o projeto: Ela foi construída segundo o seu projeto original, ou seja, segundo sua classe.
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Exemplo em Java: Classe e Objeto}
+	\par Arquivo \textit{Casa.java}
+	\begin{lstlisting}[language=Java]
+package org.dedira.oo;
+
+public class Casa {
+	public String cor;
+	public int qtdeDePisos;
+	private int anoDeConstrucao;
+	
+	public void abrirPorta() {
+		System.out.println("Nheeeeeeee.....");
+	}
+
+	public int getAnoDeConstrucao() {
+		return this.anoDeConstrucao;
+	}
+	
+	public boolean setAnoDeConstrucao(int anoDeConstrucao) {
+		
+		if (anoDeConstrucao < 0) {
+			return false;
+		}
+		
+		this.anoDeConstrucao = anoDeConstrucao;
+		return true;
+	}
+	
+	public void exibeInformacoes() {
+		System.out.println("Ano:" + anoDeConstrucao + " Cor:" + cor + " Pisos:" + qtdeDePisos);
+	}
+}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Exemplo em Java: Classe e Objeto}
+	\par Arquivo \textit{OO.java}
+	\begin{lstlisting}[language=Java]
+package org.dedira.oo;
+
+public class OO {
+	
+	public static void main(String[] args) {
+		
+		Casa minhaCasa = new Casa();
+		minhaCasa.setAnoDeConstrucao(2024);
+		minhaCasa.cor = "Rosa";
+		minhaCasa.qtdeDePisos = 1;
+		
+		minhaCasa.exibeInformacoes();
+	}
+}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exercícios}
+	\par Crie um novo programa que represente a entidade trabalhadore. Essa entidade deve ter 10 atributos e 5 acões. Pelo menos 4 das 5 ações devem levar em consideração ou usar pelo menos 5 atributos cada uma.
+	
+	\par O programa deve rodar devidamente.
+\end{frame}
