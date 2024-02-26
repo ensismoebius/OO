@@ -1,0 +1,55 @@
+\begin{frame}
+	\frametitle{Herança}
+	\begin{itemize}
+		\item Permite que uma classe herde atributos e métodos de outra classe
+		\item Promove a reutilização de código
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Exemplo em Java: Herança}
+	\begin{verbatim}
+		public class Animal {
+			void fazerSom() {
+				System.out.println("Barulho genérico");
+			}
+		}
+		
+		public class Cachorro extends Animal {
+			void fazerSom() {
+				System.out.println("Latido");
+			}
+		}
+	\end{verbatim}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Polimorfismo}
+	\begin{itemize}
+		\item Permite que objetos de diferentes classes sejam tratados de forma uniforme
+		\item Pode ocorrer através de sobrecarga ou sobreposição de métodos
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Exemplo em Java: Polimorfismo}
+	\begin{verbatim}
+		public class Calculadora {
+			int somar(int a, int b) {
+				return a + b;
+			}
+			
+			double somar(double a, double b) {
+				return a + b;
+			}
+		}
+	\end{verbatim}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Conclusão}
+	\begin{itemize}
+		\item Orientação a Objetos é um paradigma poderoso para desenvolvimento de software
+		\item Java é uma linguagem amplamente utilizada que suporta os princípios de OOP
+	\end{itemize}
+\end{frame}

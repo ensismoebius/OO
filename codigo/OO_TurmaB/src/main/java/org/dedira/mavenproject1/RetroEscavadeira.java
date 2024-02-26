@@ -14,6 +14,8 @@ public class RetroEscavadeira {
     public String placa;
     private String banco;
     private String motor;
+    
+    // Criar um método e uma propriedade nessa classe
 
     private void cavar(String terreno) {
         System.out.println("Cavei " + terreno);

@@ -1,14 +1,56 @@
 \begin{frame}
 	\frametitle{Encapsulamento}
+	\par Antes de entrar mais profundamente no assunto de encapsulamento precisamos entender o que são as visibilidades das propriedades e métodos em orientação a objetos.
+	
 	\begin{itemize}
-		\item Oculta os detalhes de implementação de uma classe
-		\item Protege os atributos de uma classe
+		\item \textbf{Visibilidade Pública}: indica que aquele atributo ou método será acessível para outros objetos um atributo público também é herdável (veremos sobre herança mais adiante)
+		\item V\textbf{isibilidade privada}: indica que o atributo ou método não será acessível para outros objetos um atributo privado não é herdável.
+		\item \textbf{Visibilidade Protegida}: indica que o atributo ou método protegido também não é acessível a outros objetos, no entanto, eles são herdáveis. 
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Encapsulamento}
+	
+	\par Em orientação a objetos, dependendo do estilo de programação da programadora ou do programador, às vezes é desejável \textbf{"esconder"} alguns atributos e métodos para assim \textbf{evitar algum acesso ou modificação acidentais}. \newline
+	
+	\par Isso é válido principalmente para os atributos pois alguns podem necessitar de algum tipo de \textbf{validação} antes de serem modificados. Se quisermos fazer isso  é necessário definir sua visibilidade como \textbf{privada}, dessa forma, não haverão modificações indesejadas.No entanto isso deixa o atributo inacessível impossibilitando qualquer modificação que seja necessária, para resolver esse problema implementamos o que se convencionou dizer chamar como \textbf{“getters”} e \textbf{“setters”} que são métodos públicos que terão o papel de validar os dados de entrada e alterar os atributos (setters) ou ler os valores que os mesmos contém (getters). 
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Encapsulamento}
+	\begin{lstlisting}[language=java]
+		public class Casa {
+			
+			private String cep; // Propriedade encapsulada
+			private int altura; // Propriedade encapsulada
+
+
+			// Getters						
+			public String getCep() {
+				return cep;
+			}
+			
+			public int getAltura() {
+				return altura;
+			}
+			
+			// Setters
+			public void setCep(String cep) {
+				this.cep = cep;
+			}
+			
+			public void setAltura(int altura) {
+				this.altura = altura;
+			}
+			
+		}
+	\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Exemplo em Java: Encapsulamento}
-	\begin{verbatim}
+	\begin{lstlisting}[language=java]
 		public class ContaBancaria {
 			private double saldo;
 			
@@ -20,61 +62,11 @@
 				saldo += valor;
 			}
 		}
-	\end{verbatim}
+	\end{lstlisting}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Herança}
-	\begin{itemize}
-		\item Permite que uma classe herde atributos e métodos de outra classe
-		\item Promove a reutilização de código
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Exemplo em Java: Herança}
-	\begin{verbatim}
-		public class Animal {
-			void fazerSom() {
-				System.out.println("Barulho genérico");
-			}
-		}
-		
-		public class Cachorro extends Animal {
-			void fazerSom() {
-				System.out.println("Latido");
-			}
-		}
-	\end{verbatim}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Polimorfismo}
-	\begin{itemize}
-		\item Permite que objetos de diferentes classes sejam tratados de forma uniforme
-		\item Pode ocorrer através de sobrecarga ou sobreposição de métodos
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Exemplo em Java: Polimorfismo}
-	\begin{verbatim}
-		public class Calculadora {
-			int somar(int a, int b) {
-				return a + b;
-			}
-			
-			double somar(double a, double b) {
-				return a + b;
-			}
-		}
-	\end{verbatim}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Conclusão}
-	\begin{itemize}
-		\item Orientação a Objetos é um paradigma poderoso para desenvolvimento de software
-		\item Java é uma linguagem amplamente utilizada que suporta os princípios de OOP
-	\end{itemize}
+	\frametitle{Exercícios}
+	\par Faça um programa que contenha duas classes a primeira classe deve conter o método principal e ele deve instanciar a segunda classe, já a segunda classe deve conter três atributos um público e dois privados. Implemente o encapsulamento desses atributos privados.
+	
 \end{frame}

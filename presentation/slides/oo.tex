@@ -1,15 +1,4 @@
 \begin{frame}
-	\frametitle{Visão Geral}
-	\begin{itemize}
-		\item Introdução à Orientação a Objetos
-		\item Classes e Objetos
-		\item Encapsulamento
-		\item Herança
-		\item Polimorfismo
-	\end{itemize}
-\end{frame}
-
-\begin{frame}[allowframebreaks]
 	\frametitle{Classes e Objetos}
 	
 	\par Uma \textbf{classe} é um modelo para criar objetos que define atributos e métodos. Uma classe também pode ser definida como uma especificação de alguma coisa.
@@ -28,6 +17,7 @@
 	\frametitle{Exemplo em Java: Classe e Objeto}
 	\par Arquivo \textit{Casa.java}
 	\begin{lstlisting}[language=Java]
+		\label{lst:code1}
 package org.dedira.oo;
 
 public class Casa {
@@ -87,3 +77,118 @@ public class OO {
 	
 	\par O programa deve rodar devidamente.
 \end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Definições básicas}
+	
+	\par Um programa em Java é composto por classes que são compostas por \textbf{propriedades} e \textbf{métodos}.
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Definições básicas}
+	
+	\par Uma \textbf{classe} pode ser definida como um modelo que determina como o objeto se comporta e quais suas características.
+	\begin{lstlisting}[language=Java]
+	// Linhas que comecam com "//" sao comentarios
+	// Um comentario nao e executado, serve apenas 
+	// como uma manual de instrucoes para facilitar
+	// o entendimento do codigo
+	
+	// O corpo da classe e tudo aquilo 
+	// que esta dentro das chaves
+	// A linha abaixo define a assinatura de uma classe. 
+	public class OO {
+		// O corpo da classe fica aqui	
+	}
+	\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Definições básicas}
+	
+	
+	\par Um \textbf{método} é uma ação que o objeto pode realizar. Dentro do contexto da programação um método é uma função ou procedimento, ou seja, um bloco de código que tem parâmetros e que pode retornar ou não algum valor.
+	\begin{lstlisting}[language=Java] 
+		public class OO {
+			
+			// Um metodo similar a um procedimento.Perceba que ele retorna "void", ou seja, um valor vazio
+			public void abrirPorta() {
+				System.out.println("Nheeeeeeee.....");
+			}
+			
+			// Um metodo similar a uma funcao. Esse retorna "int", ou seja, um numero inteiro
+			public int getAnoDeConstrucao() {
+				return 10;
+			}
+			
+			// Esse eh um metodo que retorna um "boolean", ou seja, um valor verdadeiro ou falso.
+			// Perceba que esse metodo eh uma funcao que recebe parametros
+			public boolean setAnoDeConstrucao(int anoDeConstrucao) {
+				
+				if (anoDeConstrucao < 0) {
+					return false;
+				}
+				
+				return true;
+			}
+		}
+	\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Definições básicas}
+	
+	\par Uma \textbf{propriedade} é uma variável que é visível para todo o objeto, ou seja, todos os métodos e outras propriedades \textbf{internas} do objeto podem enxergar essa variável.
+	\begin{lstlisting}[language=Java]
+		public class Casa {
+			// Essa eh uma propriedade do tipo "String", ou seja, um texto
+			public String cor;
+			// Essa tambem eh uma propriedade do tipo "int", ou seja, um numero inteiro
+			public int qtdeDePisos;
+		}
+	\end{lstlisting}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tipos Primitivos}
+	\par Os tipos primitivos em Java são aqueles que representam valores simples. Aqui estão os principais tipos primitivos:0
+
+	\begin{itemize}
+		\item \texttt{byte}: representa números inteiros de 8 bits.
+		\item \texttt{short}: representa números inteiros de 16 bits.
+		\item \texttt{int}: representa números inteiros de 32 bits.
+		\item \texttt{long}: representa números inteiros de 64 bits.
+		\item \texttt{float}: representa números de ponto flutuante de precisão simples.
+		\item \texttt{double}: representa números de ponto flutuante de dupla precisão.
+		\item \texttt{char}: representa um único caractere Unicode.
+		\item \texttt{boolean}: representa valores lógicos verdadeiro ou falso.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tipos de referência}
+	\subsection{Tipos de Referência}
+	
+	\par Os tipos de referência em Java são baseados em classes e são usados para criar objetos. Podemos usar inclusive as próprias classes criadas por nós! Aqui estão alguns exemplos comuns de tipos de referência:
+	
+	\begin{itemize}
+		\item \texttt{String}: representa uma sequência de caracteres.
+		\item \texttt{Scanner}: usado para receber entrada do usuário.
+		\item \texttt{ArrayList}: implementação de uma lista redimensionável.
+		\item \texttt{Object}: a superclasse (veremos mais adiante o que é isso) de todos os tipos de objetos em Java.
+	\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
