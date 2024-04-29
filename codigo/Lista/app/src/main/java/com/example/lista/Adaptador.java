@@ -21,7 +21,7 @@ public class Adaptador extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new Item(LayoutInflater.from(contexto).inflate(R.layout.item_da_lista,parent,false));
+        return new Item(LayoutInflater.from(contexto).inflate(R.layout.item_da_lista, parent, false));
     }
 
     @Override
