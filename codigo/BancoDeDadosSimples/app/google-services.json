@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "995799137181",
+    "project_id": "bancodedados-20377",
+    "storage_bucket": "bancodedados-20377.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995799137181:android:2e04f8fabba4c5110d4d74",
+        "android_client_info": {
+          "package_name": "org.dedira.bancodedados"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWhz_-FX77NAjlZaseYKH37h6rbOgkPC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995799137181:android:af78ce4cdc11c6b90d4d74",
+        "android_client_info": {
+          "package_name": "org.dedira.bancodedadossimples"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWhz_-FX77NAjlZaseYKH37h6rbOgkPC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,4 @@
 package com.example.lista;
-
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,6 +26,5 @@ public class MainActivity extends AppCompatActivity {
         minhasPessoas.add(new Pessoa("Uga", "Silva", 2010));
 
         listaDePessoas.setAdapter(new Adaptador(minhasPessoas, this));
-
     }
 }
