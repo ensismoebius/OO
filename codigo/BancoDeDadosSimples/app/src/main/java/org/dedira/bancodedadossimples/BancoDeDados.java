@@ -107,9 +107,8 @@ public class BancoDeDados {
 
             // Atualiza o documento
             Map<String, Object> campos = new HashMap<>();
-            campos.put("cpf", d.cpf);
             campos.put("nome", d.nome);
-            campos.put("photo", d.photo);
+            campos.put("idade", d.idade);
 
             // Chama o método que atualiza o documento
             atualizaDocumento(d.id, campos, listener);
