@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         bd.salvaDocumento(d, (operacaoRealizadaComSucesso, documento) -> {
-            if(operacaoRealizadaComSucesso){
+            if (operacaoRealizadaComSucesso) {
                 // Faz alguma pra avisar que deu bom
-            }else{
+            } else {
                 // Avisa que deu problema
             }
         });
@@ -34,34 +34,20 @@ public class MainActivity extends AppCompatActivity {
         campos.put("idade", 2000);
 
         bd.atualizaDocumento(d.id, campos, (operacaoRealizadaComSucesso, documento) -> {
-            if(operacaoRealizadaComSucesso){
+            if (operacaoRealizadaComSucesso) {
                 // Faz alguma pra avisar que deu bom
-            }else{
+            } else {
                 // Avisa que deu problema
             }
         });
 
 
         bd.apagarDocumento(d.id, (operacaoRealizadaComSucesso, documento) -> {
-            if(operacaoRealizadaComSucesso){
+            if (operacaoRealizadaComSucesso) {
                 // Faz alguma pra avisar que deu bom
-            }else{
+            } else {
                 // Avisa que deu problema
             }
         });
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
 }

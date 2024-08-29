@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "/home/ensismoebius/AndroidStudioProjects/Brocolisapp:buildapp",
+			"script": "app:build",
+			"description": "Assembles and tests this project.",
+			"group": "build",
+			"project": "app",
+			"buildFile": "/home/ensismoebius/AndroidStudioProjects/Brocolis/app/build.gradle.kts",
+			"rootProject": "Brocolis",
+			"projectFolder": "/home/ensismoebius/AndroidStudioProjects/Brocolis",
+			"workspaceFolder": "/home/ensismoebius/AndroidStudioProjects/Brocolis",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:build"
+		}
+	]
+}
