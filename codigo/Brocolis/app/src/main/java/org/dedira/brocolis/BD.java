@@ -3,6 +3,8 @@ package org.dedira.brocolis;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
+import java.util.Map;
+
 public class BD {
 
     private final FirebaseFirestore firebase;
@@ -22,10 +24,22 @@ public class BD {
                 .add(expressao)
                 .addOnSuccessListener( evento -> {
                     // Se deu certo
-                    gatilho.executa(true);
+                    expressao.id = evento.getId();
+                    gatilho.executa(true, expressao);
                 }).addOnFailureListener( evento -> {
                     // Se deu errado
-                    gatilho.executa(false);
+                    gatilho.executa(false, expressao);
+                });
+    }
+
+    public void atualizar(Expressao expressao, Gatilho gatilho, Map<String, Object> campos) {
+        firebase.collection("expressoes")
+                .document(expressao.id)
+                .update(campos)
+                .addOnSuccessListener( evento -> {
+                    gatilho.executa(false, expressao);
+                }).addOnFailureListener( evento -> {
+                    gatilho.executa(false, expressao);
                 });
     }
 }

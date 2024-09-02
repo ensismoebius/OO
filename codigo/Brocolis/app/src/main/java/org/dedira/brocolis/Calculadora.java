@@ -8,6 +8,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Calculadora extends AppCompatActivity {
 
     private EditText txtNumeroA;
@@ -19,6 +22,8 @@ public class Calculadora extends AppCompatActivity {
     private Button btnPotencia;
 
     private TextView txtResultado;
+
+    private Expressao expressao = new Expressao();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,31 +46,21 @@ public class Calculadora extends AppCompatActivity {
             txtResultado.setText(String.valueOf(resultado));
 
             BD bd = new BD();
-            Expressao expressao = new Expressao();
             expressao.expressao = numeroA + " + " + numeroB;
             expressao.resultado = String.valueOf(resultado);
-            bd.salvar(expressao, sucesso -> {
-                if(sucesso){
-                    Toast.makeText(
-                            this,
-                            "Sucesso",
-                            Toast.LENGTH_SHORT
-                    ).show();
-                }else{
-                    Toast.makeText(
-                            this,
-                            "Erro",
-                            Toast.LENGTH_SHORT
-                    ).show();
-                }
-            });
+            bd.salvar(expressao, new GatilhoGrafico(this));
         });
 
         btnSubtrair.setOnClickListener(v -> {
             double numeroA = Double.parseDouble(txtNumeroA.getText().toString());
-            double numeroB = Double.parseDouble(txtNumeroB.getText().toString());
+            double numeroB = Double.parseDouble(txtNumeroB.getT'ext().toString());
             double resultado = numeroA - numeroB;
             txtResultado.setText(String.valueOf(resultado));
+
+            BD bd = new BD();
+            Map<String, Object> camposParaAtualizar = new HashMap<>();
+            camposParaAtualizar.put("expressao", "Uga");
+            bd.atualizar(expressao, new GatilhoGrafico(this), camposParaAtualizar);
         });
 
         btnMultiplicar.setOnClickListener(v -> {
