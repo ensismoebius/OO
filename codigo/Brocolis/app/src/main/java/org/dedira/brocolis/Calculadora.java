@@ -48,7 +48,7 @@ public class Calculadora extends AppCompatActivity {
             BD bd = new BD();
             expressao.expressao = numeroA + " + " + numeroB;
             expressao.resultado = String.valueOf(resultado);
-            bd.salvar(expressao, new GatilhoG   rafico(this));
+            bd.salvar(expressao, new GatilhoGrafico(this));
         });
 
         btnSubtrair.setOnClickListener(v -> {
@@ -59,7 +59,7 @@ public class Calculadora extends AppCompatActivity {
 
             BD bd = new BD();
             Map<String, Object> camposParaAtualizar = new HashMap<>();
-            camposParaAtualizar.put("expressao", "Uga");
+            camposParaAtualizar.put("resultado", "544544454");
             bd.atualizar(expressao, new GatilhoGrafico(this), camposParaAtualizar);
         });
 

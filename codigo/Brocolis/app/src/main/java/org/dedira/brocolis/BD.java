@@ -48,10 +48,10 @@ public class BD {
                 .get()
                 .addOnCompleteListener(evento -> {
                     if (evento.isSuccessful()) {
-                        for (QueryDocumentSnapshot objeto : evento.getResult()) {
+                        for (QueryDocumentSnapshot documento : evento.getResult()) {
                             // Converte o objeto para um Documento
-                            Expressao d = objeto.toObject(Expressao.class);
-                            d.id = objeto.getId();
+                            Expressao d = documento.toObject(Expressao.class);
+                            d.id = documento.getId();
 
                             // Adiciona o documento na lista
                             listaDeDocumentos.add(d);
@@ -69,7 +69,8 @@ public class BD {
     public void apagarDocumento(String idDoDocumento, Gatilho gatilho) {
         firebase.collection("expressoes")
                 .document(idDoDocumento)
-                .delete().addOnSuccessListener(evento -> {
+                .delete()
+                .addOnSuccessListener(evento -> {
                     gatilho.executa(true, null);
                 }).addOnFailureListener(evento -> {
                     gatilho.executa(false, null);
