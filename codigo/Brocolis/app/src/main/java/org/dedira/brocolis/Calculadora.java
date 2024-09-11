@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,12 +48,12 @@ public class Calculadora extends AppCompatActivity {
             BD bd = new BD();
             expressao.expressao = numeroA + " + " + numeroB;
             expressao.resultado = String.valueOf(resultado);
-            bd.salvar(expressao, new GatilhoGrafico(this));
+            bd.salvar(expressao, new GatilhoG   rafico(this));
         });
 
         btnSubtrair.setOnClickListener(v -> {
             double numeroA = Double.parseDouble(txtNumeroA.getText().toString());
-            double numeroB = Double.parseDouble(txtNumeroB.getT'ext().toString());
+            double numeroB = Double.parseDouble(txtNumeroB.getText().toString());
             double resultado = numeroA - numeroB;
             txtResultado.setText(String.valueOf(resultado));
 
@@ -68,6 +68,22 @@ public class Calculadora extends AppCompatActivity {
             double numeroB = Double.parseDouble(txtNumeroB.getText().toString());
             double resultado = numeroA * numeroB;
             txtResultado.setText(String.valueOf(resultado));
+
+            ArrayList<Expressao> lista = new ArrayList<>();
+            BD bd = new BD();
+            bd.carregaTodosOsDocumentos(
+                    lista, // Lista que quero preeencher
+
+                    // Instância do gatilho no formato lambda
+                    (sucesso, expressao) -> {
+                        if(sucesso) {
+                            // Só executa aqui quando o gatilho é executado
+                            // Lista todas as expressões armazenadas no banco
+                            for (Expressao e : lista) {
+                                System.out.println(e.expressao);
+                            }
+                        }
+                    });
         });
 
         btnDividir.setOnClickListener(v -> {
