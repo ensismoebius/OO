@@ -23,6 +23,9 @@ public class Calculadora extends AppCompatActivity {
 
     private TextView txtResultado;
 
+    /**
+     * Teste de comentário
+     */
     private Expressao expressao = new Expressao();
 
     @Override
